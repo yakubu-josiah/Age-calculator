@@ -19,8 +19,8 @@ body {
     justify-content: center;
     border: 1px solid #000;
     min-height: 350px;
-    margin: 0 20px;
-    max-width: 1000px;
+    margin: 5%;
+    max-width: 750px;
     border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background: rgba(255, 255, 255, 0.25);
@@ -30,20 +30,27 @@ body {
 }
 
 .area {
-    margin: 30px;
-    justify-content: center;
-    flex-direction: column;
-	border-radius: 20px;
+    width: 300px;
+    margin: 10px;
 	text-align: center;
 }
 
 .area h1 {
     letter-spacing: 2px;
-    font-size: 18px;
+    font-size: 28px;
     margin-top: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+    color: #383636;
+    filter: drop-shadow(2px 2px 2px rgb(0, 119, 255));
 }
 
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 .icon {
 	display: flex;
@@ -61,34 +68,45 @@ body {
 }
 .form label{
 	display: inline-flex;
-    width: 100%;
-	float: left;
     letter-spacing: 1px;
     font-size: 12px;
     font-family: Marvel;
 }
 
 .banner {
-    display: flex;
-    background-image: url(/asset/images/weirdo.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 300px;
-    margin: 30px;
-    width: 100%;
-	border-radius: 8px;
-    opacity: 0.4;
-    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.2), 0 20px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 380px;
+    height: 100%;
 }
 
-.banner #result {
+
+.banner::after{
+    content: '';
+    width: 400px;
+    height: 100%;
+    background-image: url(/asset/images/weirdo.jpg);
     position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+    top: 0;
+    right: 0;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 20px 20px 7px rgba(0, 0, 0, 0.2), 0 20px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.banner div {
     margin: auto;
     color: #000;
     font-weight: 900;
-    padding: 3px;
     border-radius: 10px;
-    background-color: #30ffe75d;
+    position: relative;
+    z-index: 1;
+}
+
+.banner div p {
+    text-align: center;
 }
 
 button {
@@ -108,25 +126,29 @@ button {
     background: #30ffe75d;
     padding: 0;
     overflow: hidden;
-    border-bottom: 5px solid gray;
-    border-left: 1px solid gray;
+    border-bottom: 7px solid gray;
+    border-left: 2px solid gray;
     border-radius: 2px;
     /* border: 1px solid linear-gradient(to right, #46e0ce, #c5ee7d); */
 }
 
 input {
+    border: 0;
+    border: 1px solid gray;
+    border-right: 1px solid gray;
     cursor: pointer;
-    border: 1px solid linear-gradient(to right, #46e0ce, #c5ee7d);
     background: #30ffe75d;
     font-family: Marvel;
     font-size: 12px;
     font-weight: 700;
-    padding: 4px;
+    padding: 6px;
+    margin-top: 4px;
     margin-bottom: 30px;
-    width: 150px;
+    width: 200px;
 }
 
 button:active {
     border-bottom-width: 2px;
+    border-left-width: 1px;
     top: 3px;
 }
