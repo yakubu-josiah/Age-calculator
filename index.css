@@ -32,6 +32,7 @@ body {
 .area {
     margin: 30px;
     justify-content: center;
+    flex-direction: column;
 	border-radius: 20px;
 	text-align: center;
 }
@@ -76,11 +77,12 @@ body {
     margin: 30px;
     width: 100%;
 	border-radius: 8px;
-    opacity: 0.7;
+    opacity: 0.4;
     box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.2), 0 20px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .banner #result {
+    position: absolute;
     margin: auto;
     color: #000;
     font-weight: 900;
@@ -90,6 +92,7 @@ body {
 }
 
 button {
+    border: 0;
     cursor: pointer;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -100,12 +103,15 @@ button {
     position: relative;
     color: #070101;
     z-index: 1;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.2s ease-in-out;
     margin-top: 15px;
-    background: transparent;
+    background: #30ffe75d;
     padding: 0;
     overflow: hidden;
-    border: 1px solid linear-gradient(to right, #46e0ce, #c5ee7d);
+    border-bottom: 5px solid gray;
+    border-left: 1px solid gray;
+    border-radius: 2px;
+    /* border: 1px solid linear-gradient(to right, #46e0ce, #c5ee7d); */
 }
 
 input {
@@ -120,6 +126,7 @@ input {
     width: 150px;
 }
 
-button:hover {
-    background: #30ffe75d;
+button:active {
+    border-bottom-width: 2px;
+    top: 3px;
 }
