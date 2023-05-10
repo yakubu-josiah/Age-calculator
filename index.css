@@ -99,13 +99,13 @@ body {
 .banner div {
     margin: auto;
     color: #000;
-    font-weight: 900;
     border-radius: 10px;
     position: relative;
     z-index: 1;
 }
 
 .banner div p {
+    font-family: 'Courier New', Courier, monospace;
     text-align: center;
 }
 
