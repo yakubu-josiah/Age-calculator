@@ -6,11 +6,14 @@ function checkLeapYear(year) {
   return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
 }
 
+function ageCalculator(birthDay) {
+  
+}
+
 buttonEl.addEventListener("click", function () {
-  console.log("Clicked!!");
   let birthDay = inputEl.value;
   let birthYear = new Date(birthDay).getFullYear();
-  let birthMonth = new Date(birthDay).getMonth() + 1;
+  let birthMonth = new Date(birthDay).getMonth();
   let birthDate = new Date(birthDay).getDate();
   console.log("Your birth date is " + birthDate);
   console.log("Your birth month is " + birthMonth);
