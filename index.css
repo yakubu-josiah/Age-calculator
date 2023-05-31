@@ -83,7 +83,7 @@ body {
     content: '';
     width: 400px;
     height: 100%;
-    background-image: url(/asset/images/weirdo.jpg);
+    background-image: url(../asset/images/weirdo.jpg);
     position: absolute;
     background-repeat: no-repeat;
     background-size: cover;
