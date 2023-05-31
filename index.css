@@ -152,3 +152,7 @@ button:active {
     border-left-width: 1px;
     top: 3px;
 }
+
+.bold {
+    font-weight: bolder;
+}

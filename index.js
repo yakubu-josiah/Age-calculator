@@ -1,29 +1,49 @@
 const inputEl = document.getElementById("input");
 const buttonEl = document.getElementById("btn");
-const presentDate = new Date();
+const resultEl = document.getElementById("result");
 
-function checkLeapYear(year) {
+
+function leapYearCheck(year) {
   return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
 }
 
-function ageCalculator(birthDay) {
+function ageCalculator() {
   
+  const today = new Date();
+  let todayLeapYear = leapYearCheck(today.getFullYear());
+  let birthDay = inputEl.value;
+
+  let userYear = new Date(birthDay).getFullYear();
+  let userMonth = new Date(birthDay).getMonth();
+  let userDate = new Date(birthDay).getDate();
+  let userLeapYear = leapYearCheck(userYear);
+
+
+  var age = today.getFullYear() - userYear;
+
+  if ( birthDay === "" ) {
+    return alert("Please enter your Date of birth");
+  }
+
+  //Checking if birthday month is passed OR It's birthday month but not yet date
+  if (
+    today.getMonth() < userMonth ||
+    (today.getMonth() === userMonth && today.getDate() < userDate)
+  ) {
+    age--;
+    console.log(age);
+  }
+
+  //Adjusting year if it is a leap year
+  if (todayLeapYear && !userLeapYear && userMonth <= 1 && userDate <= 28) {
+    age--;
+    console.log("Happy!!")
+  }
+
+  resultEl.classList.add("bold");
+  return resultEl.innerText = `Hey see!! You're ${age} ${age > 1 ? "years": "year"} old`;
 }
 
-buttonEl.addEventListener("click", function () {
-  let birthDay = inputEl.value;
-  let birthYear = new Date(birthDay).getFullYear();
-  let birthMonth = new Date(birthDay).getMonth();
-  let birthDate = new Date(birthDay).getDate();
-  console.log("Your birth date is " + birthDate);
-  console.log("Your birth month is " + birthMonth);
-  console.log("Your birth year was in " + birthYear);
-  console.log("Present month is " + presentDate.getMonth());
-  // console.log(inputEl.getTime());
-  let result = presentDate.getFullYear() - birthYear;
-  result--;
-  console.log(result);
-  let leapBirth = checkLeapYear(birthYear); 
-  console.log(leapBirth +  `, it's ${leapBirth == 1 ? "a" : "not a"} leap year`);
-  // console.log(checkLeapYear(presentDate.getFullYear()));
-});
+
+  buttonEl.addEventListener("click", ageCalculator);
+
