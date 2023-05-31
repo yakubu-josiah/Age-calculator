@@ -116,6 +116,7 @@ button {
     text-transform: uppercase;
     font-family: Marvel;
     font-size: 14px;
+    font-weight: 500;
     width: 200px;
     height: 40px;
     position: relative;
@@ -133,14 +134,16 @@ button {
 }
 
 input {
+    letter-spacing: 3px;
+    text-align: center;
     border: 0;
     border: 1px solid gray;
     border-right: 1px solid gray;
     cursor: pointer;
     background: #30ffe75d;
     font-family: Marvel;
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 15px;
+    font-weight: 500;
     padding: 6px;
     margin-top: 4px;
     margin-bottom: 30px;
