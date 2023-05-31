@@ -22,7 +22,7 @@ function ageCalculator() {
   var age = today.getFullYear() - userYear;
 
   if ( birthDay === "" ) {
-    return alert("Please enter your Date of birth");
+    return alert("Oops!! Please enter your date of birth");
   }
 
   //Checking if birthday month is passed OR It's birthday month but not yet date
@@ -45,5 +45,21 @@ function ageCalculator() {
 }
 
 
-  buttonEl.addEventListener("click", ageCalculator);
+buttonEl.addEventListener("click", function() {
+  buttonEl.disabled = true;
+  const spinner = document.createElement('span');
+  spinner.className = 'spinner';
+  buttonEl.appendChild(spinner);
+  resultEl.innerText = "";
+  
+  setTimeout(function() {
+    setTimeout(function() {
+      resultEl.innerText = "LIKE TO KNOW YOUR AGE?";
+      buttonEl.disabled = false;
+      buttonEl.removeChild(spinner);
+      ageCalculator() 
+    }, 300)
 
+  });
+
+});
