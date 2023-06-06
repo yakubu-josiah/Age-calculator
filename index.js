@@ -8,7 +8,6 @@ function leapYearCheck(year) {
 }
 
 function ageCalculator() {
-  
   const today = new Date();
   let todayLeapYear = leapYearCheck(today.getFullYear());
   let birthDay = inputEl.value;
@@ -37,7 +36,7 @@ function ageCalculator() {
   //Adjusting year if it is a leap year
   if (todayLeapYear && !userLeapYear && userMonth <= 1 && userDate <= 28) {
     age--;
-    console.log("Happy!!")
+    console.log("It's your birth month!!");
   }
 
   resultEl.classList.add("bold");
@@ -50,10 +49,13 @@ buttonEl.addEventListener("click", function() {
   const spinner = document.createElement('span');
   spinner.className = 'spinner';
   buttonEl.appendChild(spinner);
-  resultEl.innerText = "";
+  resultEl.classList.remove("bold");
+  resultEl.classList.add("anime");
+  resultEl.innerText = "Please wait loading....";
   
   setTimeout(function() {
     setTimeout(function() {
+      resultEl.classList.remove("anime");
       resultEl.innerText = "LIKE TO KNOW YOUR AGE?";
       buttonEl.disabled = false;
       buttonEl.removeChild(spinner);
